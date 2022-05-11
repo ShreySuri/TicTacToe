@@ -30,7 +30,7 @@ t_grid = turtle.Pen()
 t_grid.hideturtle()
 t_grid.up()
 
-width = 100
+width = 200
 
 t_grid.forward(width * 1.5)
 t_grid.left(90)
