@@ -44,4 +44,24 @@ for i in range (1,5):
     for j in range (1,3):
         t_grid.forward(width)
         t_grid.right(90)
-    
+
+marker = turtle.Pen()
+marker.hideturtle()
+marker.up()
+marker.right(180)
+marker.forward(width * 1.5)
+marker.right(90)
+marker.forward(width * 1.5)
+marker.right(90)
+
+win = True
+
+while win == True:
+    guess_1 = 0
+    while guess_1 % 1 != 0 or guess_1 < 1 or guess_1 > 10:
+        guess_1 = input(print("Player 1, which square would you like to mark? 1 - 9. "))
+    x = guess_1 % 3
+    y = int((guess_1 - x)/3)
+    coordinate = x + 10 * y
+        
+                    
