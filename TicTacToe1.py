@@ -57,13 +57,19 @@ squares = [1, 2, 3, 4, 5,  6, 7, 8, 9]
 vacant_squares = 9
 
 win = True
-vacancy = False
+vacancy = 0
 
 while win == True:
     guess_1 = 0
-    while guess_1 % 1 != 0 or guess_1 < 1 or guess_1 > 10 or vacancy = False:
+    while guess_1 % 1 != 0 or guess_1 < 1 or guess_1 > 10 or vacancy == 1:
         guess_1 = input(print("Player 1, which square would you like to mark? 1 - 9. "))
         for i in range (0, vacant_squares):
+            if squares[i] == guess_1:
+                squares.remove[i]
+                vacant_squares = vacant_squares - 1
+                vacancy = vacancy + 1
+            else:
+                vacancy = vacancy + 0
             
     guess_1 = guess_1 - 1
     x = guess_1 % 3
