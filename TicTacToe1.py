@@ -79,5 +79,7 @@ while win == True:
     marker.forward(width * y)
     marker.left(90)
     
+    if symbol_1 == circles:
+        marker.circle(width)
         
                     
