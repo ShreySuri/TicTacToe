@@ -31,6 +31,7 @@ t_grid.hideturtle()
 t_grid.up()
 
 width = 200
+space = 10
 
 t_grid.forward(width * 1.5)
 t_grid.left(90)
@@ -80,6 +81,17 @@ while win == True:
     marker.left(90)
     
     if symbol_1 == circles:
-        marker.circle(width)
+        marker.forward(width * 0.5)
+    marker.right(90)
+    marker.up()
+    marker.forward(space)
+    marker.right(90)
+    marker.down()
+    marker.circle(width * 0.5 - space)
+    marker.up()
+    marker.forward(width * 0.5)
+    marker.right(90)
+    marker.forward(space)
+    marker.left(90)
         
                     
