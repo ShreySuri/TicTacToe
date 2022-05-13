@@ -62,7 +62,7 @@ vacancy = 0
 
 while win == True:
     guess_1 = 0
-    while guess_1 % 1 != 0 or guess_1 < 1 or guess_1 > 10 or vacancy == 1:
+    while guess_1 % 1 != 0 or guess_1 < 1 or guess_1 > 10 or vacancy == 0:
         guess_1 = input(print("Player 1, which square would you like to mark? 1 - 9. "))
         for i in range (0, vacant_squares):
             if squares[i] == guess_1:
@@ -80,18 +80,32 @@ while win == True:
     marker.forward(width * y)
     marker.left(90)
     
-    if symbol_1 == circles:
+    if symbol_1 == "circles":
         marker.forward(width * 0.5)
-    marker.right(90)
-    marker.up()
-    marker.forward(space)
-    marker.right(90)
-    marker.down()
-    marker.circle(width * 0.5 - space)
-    marker.up()
-    marker.forward(width * 0.5)
-    marker.right(90)
-    marker.forward(space)
-    marker.left(90)
-        
+        marker.right(90)
+        marker.up()
+        marker.forward(space)
+        marker.right(90)
+        marker.down()
+        marker.circle(width * 0.5 - space)
+        marker.up()
+        marker.forward(width * 0.5)
+        marker.right(90)
+        marker.forward(space)
+        marker.left(90)
+    elif symbol_1 == "crosses"
+        marker.right(45)
+        marker.up()
+        marker.forward(2 ** 0.5 * space)
+        for i in range (1, 5):
+            marker.forward((width - 2 * space) * 2 ** 0.5)
+            marker.left(135)
+            marker.up()
+            marker.forward(width - 2 * space)
+            marker.left(135)
+            marker.down()
+        marker.up()
+        marker.right(180)
+        marker.forward(2 ** 0.5 * space)
+        marker.left(45)
                     
