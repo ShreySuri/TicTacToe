@@ -1,5 +1,5 @@
-symbols = ["circles", "crosses", "hearts"]
-symbols_count = 3
+symbols = ["circles", "crosses", "hearts", "squares"]
+symbols_count = 4
 
 symbol_1 = None
 symbol_2 = None
@@ -8,7 +8,7 @@ check_2 = 0
 
 while check_1 == 0 and check_2 == 0:
     while check_1 == 0:
-        symbol_1 = input(print("Player 1, choose your symbol: circles, crosses, or hearts. "))
+        symbol_1 = input(print("Player 1, choose your symbol: circles, crosses, hearts, or squares. "))
         symbol_1 = symbol_1.lower()
         for i in range (0, symbols_count):
             if symbols[i] == symbol_1:
@@ -16,7 +16,7 @@ while check_1 == 0 and check_2 == 0:
             else:
                 check_1 = check_1 + 0
     while check_2 == 0:
-        symbol_2 = input(print("Player 2, choose your symbol: circles, crosses, or hearts. "))
+        symbol_2 = input(print("Player 2, choose your symbol: circles, crosses, hearts, or squares. "))
         symbol_2 = symbol_2.lower()
         for i in range (0, symbols_count):
             if symbols[i] == symbol_2:
@@ -108,4 +108,16 @@ while win == True:
         marker.right(180)
         marker.forward(2 ** 0.5 * space)
         marker.left(45)
-                    
+    elif symbol_1  = "squares"
+        marker.right(45)
+        marker.up()
+        marker.forward(2 ** 0.5 * space)
+        marker.left(45)
+        marker.down()
+        for i in range (1, 5):
+            marker.forward(width - 2 * space)
+            marker.right(90)
+        marker.right(180)
+        marker.up()
+        marker.forward(2 ** 0.5 * space)
+        marker.left(45)
