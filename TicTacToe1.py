@@ -1,5 +1,16 @@
+import turtle
+import random
+
 symbols = ["circles", "crosses", "hearts", "squares"]
 symbols_count = 4
+
+colors = ["red", "pink", "orange","yellow","green","teal","blue","indigo","purple", "tan"]
+color_picker= random.randint(0,9)
+color_1 = colors[color_picker]
+color_2 = color_1
+while color_2 == color_1:
+    color_picker = random.randint(0,9)
+    color_2 = colors[color_picker]
 
 symbol_1 = None
 symbol_2 = None
@@ -23,8 +34,6 @@ while check_1 == 0 and check_2 == 0:
                 check_2 = check_2 + 1
             else:
                 check_2 = check_2 + 0
-            
-import turtle
 
 t_grid = turtle.Pen()
 t_grid.hideturtle()
