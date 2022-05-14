@@ -1,8 +1,8 @@
 import turtle
 import random
 
-symbols = ["circles", "crosses", "hearts", "squares"]
-symbols_count = 4
+symbols = ["circles", "crosses", "hearts", "squares", "stars"]
+symbols_count = 5
 
 colors = ["red", "pink", "orange","yellow","green","teal","blue","indigo","purple", "tan"]
 color_picker= random.randint(0,9)
@@ -120,7 +120,7 @@ while win == True:
         marker.right(180)
         marker.forward(2 ** 0.5 * space)
         marker.left(45)
-    elif symbol_1 = "hearts":
+    elif symbol_1 == "hearts":
         marker.right(45)
         marker.up()
         marker.forward(20)
@@ -146,14 +146,36 @@ while win == True:
         marker.forward(45)
         marker.left(90)
         marker.forward(space)
-    elif symbol_1  = "squares":
+    elif symbol_1  == "squares":
         marker.forward(2 ** 0.5 * space)
         marker.left(45)
         marker.down()
+        marker.begin_fill()
         for i in range (1, 5):
             marker.forward(width - 2 * space)
             marker.right(90)
         marker.right(180)
+        marker.end_fill()
         marker.up()
         marker.forward(2 ** 0.5 * space)
         marker.left(45)
+    elif symbol_1 == "stars":
+        marker.up()
+        marker.forward(space)
+        marker.right(90)
+        marker.forward(80)
+        marker.left(90)
+        marker.down()
+        marker.begin_fill()
+        for i in range (1,6):
+            marker.forward(70)
+            marker.left(72)
+            marker.forward(70)
+            marker.right(144)
+        marker.end_fill()
+        marker.up()
+        marker.left(90)
+        marker.forward(80)
+        marker.left(90)
+        marker.forward(space)
+
