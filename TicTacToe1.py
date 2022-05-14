@@ -93,7 +93,7 @@ while win == True:
         marker.right(90)
         marker.forward(space)
         marker.left(90)
-    elif symbol_1 == "crosses"
+    elif symbol_1 == "crosses":
         marker.right(45)
         marker.up()
         marker.forward(2 ** 0.5 * space)
@@ -108,7 +108,14 @@ while win == True:
         marker.right(180)
         marker.forward(2 ** 0.5 * space)
         marker.left(45)
-    elif symbol_1  = "squares"
+    elif symbol_1 = "hearts":
+        marker.right(45)
+        marker.up()
+        marker.forward(2 ** 0.5 * space)
+        marker.left(135)
+    
+    
+    elif symbol_1  = "squares":
         marker.right(45)
         marker.up()
         marker.forward(2 ** 0.5 * space)
