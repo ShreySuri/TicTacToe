@@ -88,6 +88,7 @@ while win == True:
     marker.right(90)
     marker.forward(width * y)
     marker.left(90)
+    marker.fillcolor(color_1)
     
     if symbol_1 == "circles":
         marker.forward(width * 0.5)
@@ -96,7 +97,9 @@ while win == True:
         marker.forward(space)
         marker.right(90)
         marker.down()
+        marker.begin_fill()
         marker.circle(width * 0.5 - space)
+        marker.end_fill()
         marker.up()
         marker.forward(width * 0.5)
         marker.right(90)
@@ -125,6 +128,7 @@ while win == True:
         marker.forward(45)
         marker.right(180)
         marker.down()
+        marker.begin_fill()
         for i in range (1,181):
             marker.forward(0.7)
             marker.right(1)
@@ -137,6 +141,7 @@ while win == True:
         marker.right(120)
         marker.forward(160)
         marker.right(30)
+        marker.end_fill()
         marker.up()
         marker.forward(45)
         marker.left(90)
