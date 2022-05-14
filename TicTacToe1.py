@@ -109,9 +109,6 @@ while win == True:
         marker.forward(2 ** 0.5 * space)
         marker.left(45)
     elif symbol_1 = "hearts":
-        
-    
-    elif symbol_1  = "squares":
         marker.right(45)
         marker.up()
         marker.forward(20)
@@ -126,16 +123,16 @@ while win == True:
         for i in range (1,181):
             marker.forward(0.7)
             marker.right(1)
-        marker.right(y)
-        marker.forward(z)
-        marker.right(180 - 2*y)
-        marker.forward(z)
-        marker.right(y)
+        marker.right(30)
+        marker.forward(160)
+        marker.right(120)
+        marker.forward(160)
+        marker.right(30)
         marker.up()
-        marker.forward(w)
+        marker.forward(45)
         marker.left(90)
         marker.forward(space)
-
+    elif symbol_1  = "squares":
         marker.forward(2 ** 0.5 * space)
         marker.left(45)
         marker.down()
