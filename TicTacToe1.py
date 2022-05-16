@@ -179,3 +179,8 @@ while win == True:
         marker.left(90)
         marker.forward(space)
 
+    marker.forward(width * x)
+    marker.right(90)
+    marker.forward(width * y)
+    marker.right(90)
+
