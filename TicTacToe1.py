@@ -64,23 +64,23 @@ marker.right(90)
 marker.forward(width * 1.5)
 marker.right(90)
 squares = [1, 2, 3, 4, 5,  6, 7, 8, 9]
-vacant_squares = 9
 
-win = True
-vacancy = 0
+win = False
 
-while win == True:
+
+while win == False:
     guess_1 = 0
-    while guess_1 % 1 != 0 or guess_1 < 1 or guess_1 > 10 or vacancy == 0:
-        guess_1 = input(print("Player 1, which square would you like to mark? 1 - 9. "))
-        for i in range (0, vacant_squares):
-            if squares[i] == guess_1:
-                squares.remove[i]
-                vacant_squares = vacant_squares - 1
-                vacancy = vacancy + 1
+    checker = 0
+    while checker == 0:
+        while guess_1 % 1 != 0 or guess_1 < 1 or guess_1 > 10 or vacancy == 0:
+            guess_1 = input(print("Player 1, which square would you like to mark? 1 - 9. "))
+        for i in range (0,9):
+            if guess_1 == squares[i]:
+                checker = checker + 1
+                squares[i] = "placeholder"
             else:
-                vacancy = vacancy + 0
-            
+                print("That square has already been chosen. ")
+                
     guess_1 = guess_1 - 1
     x = guess_1 % 3
     y = int((guess_1 - x)/3)
