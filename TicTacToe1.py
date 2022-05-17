@@ -190,11 +190,11 @@ while win == False:
 
 # Player 2
 
-    guess_1 = 0
+    guess_2 = 0
     checker = 0
     while checker == 0:
-        while guess_1 % 1 != 0 or guess_1 < 1 or guess_1 > 10 or vacancy == 0:
-            guess_1 = input(print("Player 1, which square would you like to mark? 1 - 9. "))
+        while guess_2 % 1 != 0 or guess_2 < 1 or guess_2 > 10 or vacancy == 0:
+            guess_2 = input(print("Player 2, which square would you like to mark? 1 - 9. "))
         for i in range (0,9):
             if guess_1 == squares[i]:
                 checker = checker + 1
@@ -202,16 +202,16 @@ while win == False:
             else:
                 print("That square has already been chosen. ")
                 
-    guess_1 = guess_1 - 1
-    x = guess_1 % 3
-    y = int((guess_1 - x)/3)
+    guess_2 = guess_2 - 2
+    x = guess_2 % 3
+    y = int((guess_2 - x)/3)
     marker.forward(width * x)
     marker.right(90)
     marker.forward(width * y)
     marker.left(90)
     marker.fillcolor(color_1)
     
-    if symbol_1 == "circles":
+    if symbol_2 == "circles":
         marker.forward(width * 0.5)
         marker.right(90)
         marker.up()
