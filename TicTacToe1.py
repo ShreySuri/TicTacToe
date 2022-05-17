@@ -77,6 +77,7 @@ while win == False:
     while checker == 0:
         while guess_1 % 1 != 0 or guess_1 < 1 or guess_1 > 10 or vacancy == 0:
             guess_1 = input(print("Player 1, which square would you like to mark? 1 - 9. "))
+            guess_1 = int(guess_1)
         for i in range (0,9):
             if guess_1 == squares[i]:
                 checker = checker + 1
