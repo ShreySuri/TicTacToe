@@ -75,7 +75,7 @@ while win == False:
     guess_1 = 0
     checker = 0
     while checker == 0:
-        while guess_1 % 1 != 0 or guess_1 < 1 or guess_1 > 10 or vacancy == 0:
+        while guess_1 % 1 != 0 or guess_1 < 1 or guess_1 > 10:
             guess_1 = input(print("Player 1, which square would you like to mark? 1 - 9. "))
             guess_1 = int(guess_1)
         for i in range (0,9):
@@ -83,7 +83,11 @@ while win == False:
                 checker = checker + 1
                 squares[i] = "placeholder"
             else:
-                print("That square has already been chosen. ")
+                checker = checker + 0
+        if checker == 1:
+            print("marking square %s" % guess_1)
+        else:
+            print("That square has already been chosen. ")
                 
     guess_1 = guess_1 - 1
     x = guess_1 % 3
@@ -193,14 +197,19 @@ while win == False:
     guess_2 = 0
     checker = 0
     while checker == 0:
-        while guess_2 % 1 != 0 or guess_2 < 1 or guess_2 > 10 or vacancy == 0:
+        while guess_2 % 1 != 0 or guess_2 < 1 or guess_2 > 10:
             guess_2 = input(print("Player 2, which square would you like to mark? 1 - 9. "))
+            guess_2 = int(guess_2)
         for i in range (0,9):
             if guess_1 == squares[i]:
                 checker = checker + 1
                 squares[i] = "placeholder"
             else:
-                print("That square has already been chosen. ")
+                checker = checker + 0
+        if checker == 1:
+            print("marking square %s" % guess_2)
+        else:
+            print("That square has already been chosen. ")
                 
     guess_2 = guess_2 - 2
     x = guess_2 % 3
