@@ -72,9 +72,10 @@ while win == False:
 
 # Player 1
 
-    guess_1 = 0
     checker = 0
+
     while checker == 0:
+        guess_1 = 0
         while guess_1 % 1 != 0 or guess_1 < 1 or guess_1 > 10:
             guess_1 = input(print("Player 1, which square would you like to mark? 1 - 9. "))
             guess_1 = int(guess_1)
@@ -194,10 +195,10 @@ while win == False:
 
 # Player 2
 
-    guess_2 = 0
     checker = 0
 
     while checker == 0:
+        guess_2 = 0
         while guess_2 % 1 != 0 or guess_2 < 1 or guess_2 > 10:
             guess_2 = input(print("Player 2, which square would you like to mark? 1 - 9. "))
             guess_2 = int(guess_2)
