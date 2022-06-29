@@ -148,7 +148,7 @@ while win == False:
 
             if counter == 1:
                 print("")
-                print("This square has already been chosen. Pleae choose adifferent one.")
+                print("This square has already been chosen. Please choose a different one.")
                 checker = False
             else:
                 print("")
@@ -270,6 +270,9 @@ while win == False:
     marker.forward(y * width)
     marker.right(90)
 
+
+    print(player_1_list)
+
 # Player 2
 
     checker = False
@@ -296,7 +299,7 @@ while win == False:
 
             if counter == 1:
                 print("")
-                print("This square has already been chosen. Pleae choose adifferent one.")
+                print("This square has already been chosen. Please choose a different one.")
                 checker = False
             else:
                 print("")
@@ -417,4 +420,6 @@ while win == False:
     marker.right(90)
     marker.forward(width * y)
     marker.right(90)
+
+    print(player_1_list)
 
