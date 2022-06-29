@@ -125,7 +125,7 @@ while win == False:
 
     checker = False
 
-    while checker = False:
+    while checker == False:
 
         guess_1 = 0
         while guess_1 % 1 != 0 or guess_1 < 1 or guess_1 > 9:
@@ -273,14 +273,14 @@ while win == False:
 
     checker = False
 
-    while checker = False:
+    while checker == False:
 
-        guess_1 = 0
-        while guess_1 % 1 != 0 or guess_1 < 1 or guess_1 > 9:
+        guess_2 = 0
+        while guess_2 % 1 != 0 or guess_2 < 1 or guess_2 > 9:
             print("")
-            guess_1 = input(print("Player 1, please choose a square. Enter an integer from 1 to 9, inclusive. "))
-            guess_1 = float(guess_1)
-        guess_1 = int(guess_1)
+            guess_2 = input(print("Player 2, please choose a square. Enter an integer from 1 to 9, inclusive. "))
+            guess_2 = float(guess_1)
+        guess_2 = int(guess_1)
 
 
         if occupied_count > 0:
@@ -288,7 +288,7 @@ while win == False:
             counter = 0
             
             for i in range (0, occupied_count):
-                if squares[i] == guess_1:
+                if squares[i] == guess_2:
                     counter = counter + 1
                 else:
                     counter = counter
@@ -299,28 +299,19 @@ while win == False:
                 checker = False
             else:
                 print("")
-                print("Marking square %s. " % guess_1)
+                print("Marking square %s. " % guess_2)
                 occupied_count = occupied_count + 1
                 squares.append(guess_1)
                 checker = True
         else:
             print("")
-            print("Marking square %s. " % guess_1)
+            print("Marking square %s. " % guess_2)
             occupied_count = occupied_count + 1
-            squares.append(guess_1)
+            squares.append(guess_2)
             checker = True
 
     
-    guess_2 = guess_2 - 2
-    x = guess_2 % 3
-    y = int((guess_2 - x)/3)
-    marker.forward(width * x)
-    marker.right(90)
-    marker.forward(width * y)
-    marker.left(90)
-    marker.fillcolor(color_1)
-    trinary = 10 * x + y
-    player_2_list.append(trinary)
+    
     
     if symbol_2 == "circles":
         marker.forward(width * 0.5)
