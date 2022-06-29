@@ -109,7 +109,7 @@ marker.right(90)
 marker.forward(width * 1.5)
 marker.right(90)
 squares = []
-vacant_count = 9
+occupied_count = 0
 
 win = False
 
@@ -118,45 +118,36 @@ while win == False:
 
 # Player 1
 
-    checker = False
+    checker = None
 
-    while checker = False:
+    while checker = None or checker = False:
 
         guess_1 = int_checker(1, 9)
 
-        for i in range (0, vacant_count):
-            if squares[i] == guess:
+        if occupied_count > 0:
+            for i in range(0, occupied_count):
+                if squares[i] == guess_1:
+                    checker = False
+                else:
+                    checker = checker
+
+            if checker == False:
                 print("")
                 print("This square has already been chosen. Please choose a different one.")
                 checker = False
             else:
-                vacant_count = vacant_count - 1
-                squares.remove(guess_1)
+                occupied_count = occupied_count + 1
+                squares.append(guess_1)
                 checker = True
                 print("Marking square %s." % guess_1)
-                
-
-
-
-
-    checker = 0
-
-    while checker == 0:
-        guess_1 = 0
-        while guess_1 % 1 != 0 or guess_1 < 1 or guess_1 > 10:
-            guess_1 = input(print("Player 1, which square would you like to mark? 1 - 9. "))
-            guess_1 = int(guess_1)
-        for i in range (0,9):
-            if guess_1 == squares[i]:
-                checker = checker + 1
-                squares[i] = "placeholder"
-            else:
-                checker = checker + 0
-        if checker == 1:
-            print("marking square %s" % guess_1)
+          
         else:
-            print("That square has already been chosen. ")
-                
+            occupied_count = occupied_count + 1
+            squares.append(guess_1)
+            checker = True
+            print("Marking square %s." % guess_1)
+
+
     guess_1 = guess_1 - 1
     x = guess_1 % 3
     y = int((guess_1 - x)/3)
