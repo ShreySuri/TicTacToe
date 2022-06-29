@@ -109,6 +109,7 @@ marker.right(90)
 marker.forward(width * 1.5)
 marker.right(90)
 squares = []
+player_1_list = []
 occupied_count = 0
 
 win = False
@@ -122,7 +123,7 @@ while win == False:
 
     while checker = None or checker = False:
 
-        guess_1 = int_checker(1, 9)
+        guess_1 = int_checker(1, 9, 1)
 
         if occupied_count > 0:
             for i in range(0, occupied_count):
@@ -156,6 +157,8 @@ while win == False:
     marker.forward(width * y)
     marker.left(90)
     marker.fillcolor(color_1)
+    trinary = 10 * x + y
+    player_1_list.append(trinary)
     
     if symbol_1 == "circles":
         marker.forward(width * 0.5)
@@ -257,7 +260,7 @@ while win == False:
 
     while checker = None or checker = False:
 
-        guess_1 = int_checker(1, 9)
+        guess_2 = int_checker(1, 9, 2)
 
         if occupied_count > 0:
             for i in range(0, occupied_count):
@@ -272,15 +275,15 @@ while win == False:
                 checker = False
             else:
                 occupied_count = occupied_count + 1
-                squares.append(guess_1)
+                squares.append(guess_2)
                 checker = True
-                print("Marking square %s." % guess_1)
+                print("Marking square %s." % guess_2)
           
         else:
             occupied_count = occupied_count + 1
-            squares.append(guess_1)
+            squares.append(guess_2)
             checker = True
-            print("Marking square %s." % guess_1)
+            print("Marking square %s." % guess_2)
 
 
     
@@ -292,6 +295,8 @@ while win == False:
     marker.forward(width * y)
     marker.left(90)
     marker.fillcolor(color_1)
+    trinary = 10 * x + y
+    player_2_list.append(trinary)
     
     if symbol_2 == "circles":
         marker.forward(width * 0.5)
