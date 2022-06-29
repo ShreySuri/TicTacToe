@@ -123,9 +123,9 @@ while win == False:
 
 # Player 1
 
-    checker = None
+    checker = False
 
-    while checker == None or checker == False:
+    while checker = False:
 
         guess_1 = 0
         while guess_1 % 1 != 0 or guess_1 < 1 or guess_1 > 9:
@@ -134,29 +134,36 @@ while win == False:
             guess_1 = float(guess_1)
         guess_1 = int(guess_1)
 
-        if occupied_count > 0:
-            for i in range(0, occupied_count):
-                if squares[i] == guess_1:
-                    checker = False
-                else:
-                    checker = checker
 
-            if checker == False:
+        if occupied_count > 0:
+
+            counter = 0
+            
+            for i in range (0, occupied_count):
+                if squares[i] == guess_1:
+                    counter = counter + 1
+                else:
+                    counter = counter
+
+            if counter == 1:
                 print("")
-                print("This square has already been chosen. Please choose a different one.")
+                print("This square has already been chosen. Pleae choose adifferent one.")
                 checker = False
             else:
+                print("")
+                print("Marking square %s. " % guess_1)
                 occupied_count = occupied_count + 1
                 squares.append(guess_1)
                 checker = True
-                print("Marking square %s." % guess_1)
-          
         else:
+            print("")
+            print("Marking square %s. " % guess_1)
             occupied_count = occupied_count + 1
             squares.append(guess_1)
             checker = True
-            print("Marking square %s." % guess_1)
 
+
+       
     guess_1 = guess_1 - 1
     x = guess_1 % 3
     y = int((guess_1 - x)/3)
@@ -264,9 +271,9 @@ while win == False:
 
 # Player 2
 
-    checker = None
+    checker = False
 
-    while checker == None or checker == False:
+    while checker = False:
 
         guess_1 = 0
         while guess_1 % 1 != 0 or guess_1 < 1 or guess_1 > 9:
@@ -274,30 +281,34 @@ while win == False:
             guess_1 = input(print("Player 1, please choose a square. Enter an integer from 1 to 9, inclusive. "))
             guess_1 = float(guess_1)
         guess_1 = int(guess_1)
-        
-        if occupied_count > 0:
-            for i in range(0, occupied_count):
-                if squares[i] == guess_1:
-                    checker = False
-                else:
-                    checker = checker
 
-            if checker == False:
+
+        if occupied_count > 0:
+
+            counter = 0
+            
+            for i in range (0, occupied_count):
+                if squares[i] == guess_1:
+                    counter = counter + 1
+                else:
+                    counter = counter
+
+            if counter == 1:
                 print("")
-                print("This square has already been chosen. Please choose a different one.")
+                print("This square has already been chosen. Pleae choose adifferent one.")
                 checker = False
             else:
+                print("")
+                print("Marking square %s. " % guess_1)
                 occupied_count = occupied_count + 1
-                squares.append(guess_2)
+                squares.append(guess_1)
                 checker = True
-                print("Marking square %s." % guess_2)
-          
         else:
+            print("")
+            print("Marking square %s. " % guess_1)
             occupied_count = occupied_count + 1
-            squares.append(guess_2)
+            squares.append(guess_1)
             checker = True
-            print("Marking square %s." % guess_2)
-
 
     
     guess_2 = guess_2 - 2
