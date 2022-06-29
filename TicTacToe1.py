@@ -113,8 +113,9 @@ marker.right(90)
 marker.forward(width * 1.5)
 marker.right(90)
 squares = []
-player_1_list = []
 occupied_count = 0
+player_1_list = []
+player_2_list = []
 
 win = False
 
@@ -279,8 +280,8 @@ while win == False:
         while guess_2 % 1 != 0 or guess_2 < 1 or guess_2 > 9:
             print("")
             guess_2 = input(print("Player 2, please choose a square. Enter an integer from 1 to 9, inclusive. "))
-            guess_2 = float(guess_1)
-        guess_2 = int(guess_1)
+            guess_2 = float(guess_2)
+        guess_2 = int(guess_2)
 
 
         if occupied_count > 0:
@@ -301,7 +302,7 @@ while win == False:
                 print("")
                 print("Marking square %s. " % guess_2)
                 occupied_count = occupied_count + 1
-                squares.append(guess_1)
+                squares.append(guess_2)
                 checker = True
         else:
             print("")
@@ -310,7 +311,17 @@ while win == False:
             squares.append(guess_2)
             checker = True
 
-    
+    guess_2 = guess_2 - 1    
+    x = guess_2 % 3
+    y = int((guess_2 - x)/3)
+    trinary = float(x + 0.1 * y)
+    player_2_list.append(trinary)
+
+
+    marker.forward(width * x)
+    marker.right(90)
+    marker.forward(width * y)
+    marker.left(90)
     
     
     if symbol_2 == "circles":
