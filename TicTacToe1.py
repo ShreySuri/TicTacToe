@@ -1,20 +1,26 @@
 import turtle
 import random
 
-def int_checker(x, y):
+def int_checker(x, y, z):
     if x <= y:
         def_final = False
     else:
         def_final = 0
+
+    if z == 1 or z == 2:
+        def_final = 0
+    else:
+        def_final = False
         
     if def_final == 0:
         x = str(x)
         y = str(y)
+        z = str(z)
         def_check = False
         
         while def_check == False:
             print("")
-            def_input = input(print("Please choose an integer between %s and %s, inclusive. " % (x, y)))
+            def_input = input(print("Player %s, please choose a square. Enter an integer from %s to %s, inclusive. " % (z, x, y)))
             def_input = float(def_input)
 
             if def_input % 1 == 0 and def_input >= x and def_input <= y:
@@ -102,7 +108,7 @@ marker.forward(width * 1.5)
 marker.right(90)
 marker.forward(width * 1.5)
 marker.right(90)
-squares = [1, 2, 3, 4, 5,  6, 7, 8, 9]
+squares = []
 vacant_count = 9
 
 win = False
@@ -116,12 +122,19 @@ while win == False:
 
     while checker = False:
 
-        guess_1 = int_checker
+        guess_1 = int_checker(1, 9)
+
         for i in range (0, vacant_count):
             if squares[i] == guess:
                 print("")
-                print("This square has al
-
+                print("This square has already been chosen. Please choose a different one.")
+                checker = False
+            else:
+                vacant_count = vacant_count - 1
+                squares.remove(guess_1)
+                checker = True
+                print("Marking square %s." % guess_1)
+                
 
 
 
