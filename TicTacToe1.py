@@ -1,6 +1,36 @@
 import turtle
 import random
 
+def int_checker(x, y):
+    if x <= y:
+        def_final = False
+    else:
+        def_final = 0
+        
+    if def_final == 0:
+        x = str(x)
+        y = str(y)
+        def_check = False
+        
+        while def_check == False:
+            print("")
+            def_input = input(print("Please choose an integer between %s and %s, inclusive. " % (x, y)))
+            def_input = float(def_input)
+
+            if def_input % 1 == 0 and def_input >= x and def_input <= y:
+                def_check == True
+                def_input = int(def_input)
+            else:
+                def_check = False
+
+        def_final = def_check
+        
+    else:
+        def_toggle = True
+
+    return(def_final)
+
+
 symbols = ["circles", "crosses", "hearts", "squares", "stars"]
 symbols_count = 5
 
@@ -17,23 +47,32 @@ symbol_2 = None
 check_1 = 0
 check_2 = 0
 
-while check_1 == 0 and check_2 == 0:
-    while check_1 == 0:
-        symbol_1 = input(print("Player 1, choose your symbol: circles, crosses, hearts, or squares. "))
-        symbol_1 = symbol_1.lower()
-        for i in range (0, symbols_count):
-            if symbols[i] == symbol_1:
-                check_1 = check_1 + 1
-            else:
-                check_1 = check_1 + 0
-    while check_2 == 0:
-        symbol_2 = input(print("Player 2, choose your symbol: circles, crosses, hearts, or squares. "))
-        symbol_2 = symbol_2.lower()
-        for i in range (0, symbols_count):
-            if symbols[i] == symbol_2:
-                check_2 = check_2 + 1
-            else:
-                check_2 = check_2 + 0
+
+while check_1 == 0:
+    symbol_1 = input(print("Player 1, choose your symbol: circles, crosses, hearts, or squares. "))
+    symbol_1 = symbol_1.lower()
+    for i in range (0, symbols_count):
+        if symbols[i] == symbol_1:
+            check_1 = check_1 + 1
+        else:
+            check_1 = check_1 + 0
+            
+while check_2 == 0:
+    print("")
+    symbol_2 = input(print("Player 2, choose your symbol: circles, crosses, hearts, or squares. "))
+    symbol_2 = symbol_2.lower()
+    for i in range (0, symbols_count):
+        if symbols[i] == symbol_2:
+            check_2 = check_2 + 1
+        else:
+           check_2 = check_2 + 0
+           
+    if symbol_2 == symbol_1:
+        check_2 = 0
+        print("")
+        print("This symbol has been selected by Player 1. Please choose a different signal.")
+    else:
+        toggle = True
 
 t_grid = turtle.Pen()
 t_grid.hideturtle()
@@ -46,12 +85,12 @@ t_grid.forward(width * 1.5)
 t_grid.left(90)
 t_grid.forward(width * 0.5)
 t_grid.left(90)
-for i in range (1,5):
+for i in range (0,4):
     t_grid.down()
     t_grid.forward(width * 3)
     t_grid.up()
     t_grid.right(90)
-    for j in range (1,3):
+    for j in range (0,2):
         t_grid.forward(width)
         t_grid.right(90)
 
@@ -64,6 +103,7 @@ marker.right(90)
 marker.forward(width * 1.5)
 marker.right(90)
 squares = [1, 2, 3, 4, 5,  6, 7, 8, 9]
+vacant_count = 9
 
 win = False
 
@@ -71,6 +111,20 @@ win = False
 while win == False:
 
 # Player 1
+
+    checker = False
+
+    while checker = False:
+
+        guess_1 = int_checker
+        for i in range (0, vacant_count):
+            if squares[i] == guess:
+                print("")
+                print("This square has al
+
+
+
+
 
     checker = 0
 
