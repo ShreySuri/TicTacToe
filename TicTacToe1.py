@@ -23,6 +23,10 @@ def int_checker(x, y, z):
             def_input = input(print("Player %s, please choose a square. Enter an integer from %s to %s, inclusive. " % (z, x, y)))
             def_input = float(def_input)
 
+            x = int(x)
+            y = int(y)
+            z = int(z)
+
             if def_input % 1 == 0 and def_input >= x and def_input <= y:
                 def_check == True
                 def_input = int(def_input)
@@ -121,9 +125,14 @@ while win == False:
 
     checker = None
 
-    while checker = None or checker = False:
+    while checker == None or checker == False:
 
-        guess_1 = int_checker(1, 9, 1)
+        guess_1 = 0
+        while guess_1 % 1 != 0 or guess_1 < 1 or guess_1 > 9:
+            print("")
+            guess_1 = input(print("Player 1, please choose a square. Enter an integer from 1 to 9, inclusive. "))
+            guess_1 = float(guess_1)
+        guess_1 = int(guess_1)
 
         if occupied_count > 0:
             for i in range(0, occupied_count):
@@ -148,18 +157,17 @@ while win == False:
             checker = True
             print("Marking square %s." % guess_1)
 
-
     guess_1 = guess_1 - 1
     x = guess_1 % 3
     y = int((guess_1 - x)/3)
+    trinary = float(x + 0.1 * y)
+    player_1_list.append(trinary)
+
     marker.forward(width * x)
     marker.right(90)
     marker.forward(width * y)
     marker.left(90)
-    marker.fillcolor(color_1)
-    trinary = 10 * x + y
-    player_1_list.append(trinary)
-    
+ 
     if symbol_1 == "circles":
         marker.forward(width * 0.5)
         marker.right(90)
@@ -249,19 +257,24 @@ while win == False:
         marker.left(90)
         marker.forward(space)
 
-    marker.forward(width * x)
+    marker.forward(x * width)
     marker.right(90)
-    marker.forward(width * y)
+    marker.forward(y * width)
     marker.right(90)
 
 # Player 2
 
     checker = None
 
-    while checker = None or checker = False:
+    while checker == None or checker == False:
 
-        guess_2 = int_checker(1, 9, 2)
-
+        guess_1 = 0
+        while guess_1 % 1 != 0 or guess_1 < 1 or guess_1 > 9:
+            print("")
+            guess_1 = input(print("Player 1, please choose a square. Enter an integer from 1 to 9, inclusive. "))
+            guess_1 = float(guess_1)
+        guess_1 = int(guess_1)
+        
         if occupied_count > 0:
             for i in range(0, occupied_count):
                 if squares[i] == guess_1:
