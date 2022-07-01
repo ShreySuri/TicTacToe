@@ -1,6 +1,42 @@
 import turtle
 import random
 
+def vert_checker(list_1, counter):
+    def_counter = 0
+    list_1.sort()
+    for i in range (1, counter):
+        if list_1[i] - list_1[i - 1] == 0.1:
+            def_counter = def_counter + 1
+        else:
+            def_counter = def_counter + 0
+
+    if def_counter == 3:
+        return(True)
+    else:
+        return(False)
+
+def hori_checker(list_1, counter):
+    def_counter = 0
+    bool_def_counter = False
+    for i in range (0, 3):
+        target_rem = i * 0.1
+        for i in range (0, counter):
+            rem = list_1[i] % 1
+            if rem == target_rem:
+                def_counter = def_counter + 1
+            else:
+                def_counter = def_counter + 0
+
+        if def_counter == 3:
+            bool_def_counter = True
+        else:
+            bool_def_counter = False
+
+    return(bool_def_counter)
+
+
+
+
 
 symbols = ["circles", "crosses", "hearts", "squares", "stars"]
 symbols_count = 5
@@ -68,15 +104,19 @@ for i in range (0,4):
 marker = turtle.Pen()
 marker.hideturtle()
 marker.up()
+
 marker.right(180)
 marker.forward(width * 1.5)
 marker.right(90)
 marker.forward(width * 1.5)
 marker.right(90)
+
 squares = []
 occupied_count = 0
 player_1_list = []
 player_2_list = []
+list_1_counter = 0
+list_2_counter = 0
 
 win = False
 
@@ -241,6 +281,7 @@ while win == False:
 
 
     print(player_1_list)
+    list_1_counter = list_1_counter + 1
 
 # Player 2
 
@@ -397,4 +438,5 @@ while win == False:
     marker.right(90)
 
     print(player_2_list)
+    list_2_counter = list_2_counter + 1
 
