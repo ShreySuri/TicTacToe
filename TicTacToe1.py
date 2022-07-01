@@ -207,19 +207,18 @@ while win == False:
         marker.forward(2 ** 0.5 * space)
         marker.left(45)
     elif symbol_1 == "hearts":
-        marker.right(45)
         marker.up()
         marker.forward(20)
         marker.right(90)
-        marker.forward(45)
-        marker.right(180)
+        marker.forward(50)
+        marker.left(180)
         marker.down()
         marker.begin_fill()
-        for i in range (1,181):
+        for i in range (0,180):
             marker.forward(0.7)
             marker.right(1)
         marker.right(180)
-        for i in range (1,181):
+        for i in range (0,180):
             marker.forward(0.7)
             marker.right(1)
         marker.right(30)
@@ -229,22 +228,30 @@ while win == False:
         marker.right(30)
         marker.end_fill()
         marker.up()
-        marker.forward(45)
+        marker.forward(50)
         marker.left(90)
-        marker.forward(space)
+        marker.forward(20)
+
     elif symbol_1  == "squares":
-        marker.forward(2 ** 0.5 * space)
-        marker.left(45)
+        space = space * 2
+        marker.up()
+        marker.forward(space)
+        marker.right(90)
+        marker.forward(space)
+        marker.left(90)
         marker.down()
         marker.begin_fill()
-        for i in range (1, 5):
-            marker.forward(width - 2 * space)
+        length = width - 2 * space
+        for i in range (0, 4):
+            marker.forward(length)
             marker.right(90)
-        marker.right(180)
         marker.end_fill()
         marker.up()
-        marker.forward(2 ** 0.5 * space)
-        marker.left(45)
+        marker.left(90)
+        marker.forward(space)
+        marker.left(90)
+        marker.forward(space)
+        space = int(space * 0.5)
     elif symbol_1 == "stars":
         marker.up()
         marker.forward(space)
@@ -358,19 +365,18 @@ while win == False:
         marker.forward(2 ** 0.5 * space)
         marker.left(45)
     elif symbol_2 == "hearts":
-        marker.right(45)
         marker.up()
         marker.forward(20)
         marker.right(90)
-        marker.forward(45)
-        marker.right(180)
+        marker.forward(50)
+        marker.left(180)
         marker.down()
         marker.begin_fill()
-        for i in range (1,181):
+        for i in range (0,180):
             marker.forward(0.7)
             marker.right(1)
         marker.right(180)
-        for i in range (1,181):
+        for i in range (0,180):
             marker.forward(0.7)
             marker.right(1)
         marker.right(30)
@@ -380,22 +386,29 @@ while win == False:
         marker.right(30)
         marker.end_fill()
         marker.up()
-        marker.forward(45)
+        marker.forward(50)
         marker.left(90)
-        marker.forward(space)
+        marker.forward(20)
     elif symbol_2  == "squares":
-        marker.forward(2 ** 0.5 * space)
-        marker.left(45)
+        space = space * 2
+        marker.up()
+        marker.forward(space)
+        marker.right(90)
+        marker.forward(space)
+        marker.left(90)
         marker.down()
         marker.begin_fill()
-        for i in range (1, 5):
-            marker.forward(width - 2 * space)
+        length = width - 2 * space
+        for i in range (0, 4):
+            marker.forward(length)
             marker.right(90)
-        marker.right(180)
         marker.end_fill()
         marker.up()
-        marker.forward(2 ** 0.5 * space)
-        marker.left(45)
+        marker.left(90)
+        marker.forward(space)
+        marker.left(90)
+        marker.forward(space)
+        space = int(space * 0.5)
     elif symbol_2 == "stars":
         marker.up()
         marker.forward(space)
@@ -421,5 +434,5 @@ while win == False:
     marker.forward(width * y)
     marker.right(90)
 
-    print(player_1_list)
+    print(player_2_list)
 
