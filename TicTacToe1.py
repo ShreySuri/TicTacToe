@@ -1,45 +1,6 @@
 import turtle
 import random
 
-def int_checker(x, y, z):
-    if x <= y:
-        def_final = False
-    else:
-        def_final = 0
-
-    if z == 1 or z == 2:
-        def_final = 0
-    else:
-        def_final = False
-        
-    if def_final == 0:
-        x = str(x)
-        y = str(y)
-        z = str(z)
-        def_check = False
-        
-        while def_check == False:
-            print("")
-            def_input = input(print("Player %s, please choose a square. Enter an integer from %s to %s, inclusive. " % (z, x, y)))
-            def_input = float(def_input)
-
-            x = int(x)
-            y = int(y)
-            z = int(z)
-
-            if def_input % 1 == 0 and def_input >= x and def_input <= y:
-                def_check == True
-                def_input = int(def_input)
-            else:
-                def_check = False
-
-        def_final = def_check
-        
-    else:
-        def_toggle = True
-
-    return(def_final)
-
 
 symbols = ["circles", "crosses", "hearts", "squares", "stars"]
 symbols_count = 5
@@ -59,7 +20,7 @@ check_2 = 0
 
 
 while check_1 == 0:
-    symbol_1 = input(print("Player 1, choose your symbol: circles, crosses, hearts, or squares. "))
+    symbol_1 = input(print("Player 1, choose your symbol: circles, crosses, hearts, squares, or stars. "))
     symbol_1 = symbol_1.lower()
     for i in range (0, symbols_count):
         if symbols[i] == symbol_1:
@@ -69,7 +30,7 @@ while check_1 == 0:
             
 while check_2 == 0:
     print("")
-    symbol_2 = input(print("Player 2, choose your symbol: circles, crosses, hearts, or squares. "))
+    symbol_2 = input(print("Player 2, choose your symbol: circles, crosses, hearts, squares, or stars. "))
     symbol_2 = symbol_2.lower()
     for i in range (0, symbols_count):
         if symbols[i] == symbol_2:
@@ -175,6 +136,7 @@ while win == False:
     marker.right(90)
     marker.forward(width * y)
     marker.left(90)
+    marker.fillcolor(color_1)
  
     if symbol_1 == "circles":
         marker.forward(width * 0.5)
@@ -332,7 +294,7 @@ while win == False:
     marker.right(90)
     marker.forward(width * y)
     marker.left(90)
-    
+    marker.fillcolor(color_2)
     
     if symbol_2 == "circles":
         marker.forward(width * 0.5)
