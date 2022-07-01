@@ -2,18 +2,25 @@ import turtle
 import random
 
 def vert_checker(list_1, counter):
-    def_counter = 0
-    list_1.sort()
-    for i in range (1, counter):
-        if list_1[i] - list_1[i - 1] == 0.1:
-            def_counter = def_counter + 1
-        else:
-            def_counter = def_counter + 0
+    int_list = []
+    for i in range (0, counter):
+        rem = list_1[i] % 1
+        int_1 = int(list_1[i] - rem)
+        int_list.append(int_1)
 
-    if def_counter == 3:
-        return(True)
-    else:
-        return(False)
+    int_list.sort()
+    for i in range (0, 2):
+        int_list.append(10)
+    
+    counter = False
+    for i in  range (0, counter):
+        if int_list[i] == int_list[i+1] and int_list[i] == int_list[i+2]:
+            counter = True
+        else:
+            counter = counter
+
+    return(counter)
+            
 
 def hori_checker(list_1, counter):
     def_counter = 0
@@ -30,7 +37,7 @@ def hori_checker(list_1, counter):
         if def_counter == 3:
             bool_def_counter = True
         else:
-            bool_def_counter = False
+            bool_def_counter = bool_def_counter
 
     return(bool_def_counter)
 
