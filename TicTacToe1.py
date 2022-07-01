@@ -1,5 +1,6 @@
 import turtle
 import random
+import time
 
 def vert_checker(list_1, counter):
     int_list = []
@@ -223,19 +224,24 @@ while win == False:
         marker.forward(space)
         marker.left(90)
     elif symbol_1 == "crosses":
+        marker.up()
         marker.right(45)
+        marker.forward(25)
+        marker.right(90)
+        marker.down()
+        marker.begin_fill()
+        for i in range (0, 4):
+            marker.forward(15)
+            marker.left(90)
+            marker.forward(100)
+            marker.right(90)
+            marker.forward(100)
+            marker.left(90)
+            marker.forward(15)
+        marker.end_fill()
         marker.up()
-        marker.forward(2 ** 0.5 * space)
-        for i in range (1, 5):
-            marker.forward((width - 2 * space) * 2 ** 0.5)
-            marker.left(135)
-            marker.up()
-            marker.forward(width - 2 * space)
-            marker.left(135)
-            marker.down()
-        marker.up()
-        marker.right(180)
-        marker.forward(2 ** 0.5 * space)
+        marker.right(90)
+        marker.forward(25)
         marker.left(45)
     elif symbol_1 == "hearts":
         marker.up()
@@ -310,9 +316,15 @@ while win == False:
 
     l = vert_checker(player_1_list, list_1_counter)
     m = hori_checker(player_1_list, list_1_counter)
-    n = vert_checker(player_1_list, list_1_counter)
-    o = vert_checker(player_1_list, list_1_counter)
-    
+    n = diag_checker_1(player_1_list, list_1_counter)
+    o = diag_checker_2(player_1_list, list_1_counter)
+
+    if l == True or m == True or n == True or o == True:
+        print("")
+        print("Player 1 wins!")
+        time.sleep(3600)
+    else:
+        toggle = True
 
 # Player 2
 
@@ -384,19 +396,24 @@ while win == False:
         marker.forward(space)
         marker.left(90)
     elif symbol_2 == "crosses":
+        marker.up()
         marker.right(45)
+        marker.forward(25)
+        marker.right(90)
+        marker.down()
+        marker.begin_fill()
+        for i in range (0, 4):
+            marker.forward(15)
+            marker.left(90)
+            marker.forward(100)
+            marker.right(90)
+            marker.forward(100)
+            marker.left(90)
+            marker.forward(15)
+        marker.end_fill()
         marker.up()
-        marker.forward(2 ** 0.5 * space)
-        for i in range (1, 5):
-            marker.forward((width - 2 * space) * 2 ** 0.5)
-            marker.left(135)
-            marker.up()
-            marker.forward(width - 2 * space)
-            marker.left(135)
-            marker.down()
-        marker.up()
-        marker.right(180)
-        marker.forward(2 ** 0.5 * space)
+        marker.right(90)
+        marker.forward(25)
         marker.left(45)
     elif symbol_2 == "hearts":
         marker.up()
@@ -467,4 +484,19 @@ while win == False:
     marker.right(90)
     marker.forward(width * y)
     marker.right(90)
+
+    l = vert_checker(player_2_list, list_2_counter)
+    m = hori_checker(player_2_list, list_2_counter)
+    n = diag_checker_1(player_2_list, list_2_counter)
+    o = diag_checker_2(player_2_list, list_2_counter)
+
+    if l == True or m == True or n == True or o == True:
+        win = True
+    else:
+        toggle = False
+
+
+print("")
+print("Player 2 wins!")
+    
 
