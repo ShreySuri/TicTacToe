@@ -18,7 +18,6 @@ for i in range (0, 5):
 
 
 
-fill_color = red
 space = space * 2
 marker.up()
 marker.forward(space)
