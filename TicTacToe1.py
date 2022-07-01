@@ -12,35 +12,56 @@ def vert_checker(list_1, counter):
     for i in range (0, 2):
         int_list.append(10)
     
-    counter = False
+    def_counter = False
     for i in  range (0, counter):
         if int_list[i] == int_list[i+1] and int_list[i] == int_list[i+2]:
-            counter = True
+            def_counter = True
         else:
-            counter = counter
+            def_counter = def_counter
 
-    return(counter)
+    return(def_counter)
             
 
-def hori_checker(list_1, counter):
+def hori_checker(list_1, counter_1):
+    rem_list = []
+    for i in range (0, counter_1):
+        a = list_1[i] * 10
+        b = int(a % 10)
+        rem_list.append(b)
+
+    c = vert_checker(rem_list, counter_1)
+    return(c)
+
+
+def diag_checker_1(list_1, counter):
     def_counter = 0
-    bool_def_counter = False
-    for i in range (0, 3):
-        target_rem = i * 0.1
-        for i in range (0, counter):
-            rem = list_1[i] % 1
-            if rem == target_rem:
-                def_counter = def_counter + 1
-            else:
-                def_counter = def_counter + 0
-
-        if def_counter == 3:
-            bool_def_counter = True
+    for i in range (0, counter):
+        if list_1[i] == 0.0 or list_1[i] == 1.1 or list_1[i] == 2.2:
+            def_counter = def_counter + 1
         else:
-            bool_def_counter = bool_def_counter
+            def_counter = def_counter
 
-    return(bool_def_counter)
+    if def_counter == 3:
+        def_counter = True
+    else:
+        def_counter = False
 
+    return(def_counter)
+
+def diag_checker_2(list_1, counter):
+    def_counter = 0
+    for i in range (0, counter):
+        if list_1[i] == 0.2 or list_1[i] == 1.1 or list_1[i] == 2.0:
+            def_counter = def_counter + 1
+        else:
+            def_counter = def_counter
+
+    if def_counter == 3:
+        def_counter = True
+    else:
+        def_counter = False
+
+    return(def_counter)
 
 
 
@@ -178,6 +199,7 @@ while win == False:
     y = int((guess_1 - x)/3)
     trinary = float(x + 0.1 * y)
     player_1_list.append(trinary)
+    list_1_counter = list_1_counter + 1
 
     marker.forward(width * x)
     marker.right(90)
@@ -286,9 +308,11 @@ while win == False:
     marker.forward(y * width)
     marker.right(90)
 
-
-    print(player_1_list)
-    list_1_counter = list_1_counter + 1
+    l = vert_checker(player_1_list, list_1_counter)
+    m = hori_checker(player_1_list, list_1_counter)
+    n = vert_checker(player_1_list, list_1_counter)
+    o = vert_checker(player_1_list, list_1_counter)
+    
 
 # Player 2
 
@@ -336,7 +360,7 @@ while win == False:
     y = int((guess_2 - x)/3)
     trinary = float(x + 0.1 * y)
     player_2_list.append(trinary)
-
+    list_2_counter = list_2_counter + 1
 
     marker.forward(width * x)
     marker.right(90)
@@ -443,7 +467,4 @@ while win == False:
     marker.right(90)
     marker.forward(width * y)
     marker.right(90)
-
-    print(player_2_list)
-    list_2_counter = list_2_counter + 1
 
